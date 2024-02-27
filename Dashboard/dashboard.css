@@ -1,0 +1,50 @@
+.user-details {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    border: 1px solid #000;
+    padding: 10px;
+    /* background-color: #B7C9F2; */
+    background-image: transparent;
+    max-width: 400px;
+}
+
+.card-body {
+    margin-bottom: 10px;
+}
+
+.container form {
+    width: 60%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.container form textarea, 
+.container form input[type="text"] {
+    width: calc(100% - 22px); /* Adjusted for input padding and border */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+body{
+    background-image: url(https://i.pinimg.com/736x/24/1a/91/241a91929a27066749bae703cfdaa3c6.jpg);
+}
+
+

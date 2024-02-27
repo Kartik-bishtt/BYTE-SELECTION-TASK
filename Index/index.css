@@ -1,0 +1,14 @@
+.body {
+    font-family: "Raleway", sans-serif;
+}
+
+.heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: cyan;
+    font-size: 5em;
+    letter-spacing: 0.1;
+    width: 110vw;
+    height: 80vh;
+}
