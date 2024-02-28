@@ -18,6 +18,7 @@ function registerUser() {
     })
         .then(res => {
             console.log("Registration successful: ", res.data);
+            window.location.href = "login.html"
         })
         .catch(err => {
             console.log("Error:", err.message);

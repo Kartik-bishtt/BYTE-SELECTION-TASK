@@ -20,6 +20,57 @@ async function getUserDetails() {
     }
 }
 
+
+async function displayPoem(poemData) {
+    const cardContainer = document.createElement("div");
+    cardContainer.className = "card-container";
+
+    const cardPoem = document.createElement("div");
+    cardPoem.className = "card-body";
+    cardPoem.textContent = poemData.poem;
+
+    const cardAuthor = document.createElement("div");
+    cardAuthor.className = "card-body";
+    cardAuthor.textContent = `By ${poemData.author}`;
+
+    cardContainer.appendChild(cardPoem);
+    cardContainer.appendChild(cardAuthor);
+
+    const poemList = document.querySelector("#poem-list");
+    poemList.appendChild(cardContainer);
+}
+
+async function getPoemsAndDisplay() {
+    try {
+        const response = await axios.get("http://panel.mait.ac.in:8001/poem/get/", {
+            headers: {
+                "Authorization": `Bearer ${accessToken}`,
+                "Accept": "application/json"
+            }
+        });
+
+        const poemsData = response.data;
+
+        if (poemsData.length === 0) {
+            console.log("No poems found.");
+        } else {
+            console.log("Poems:");
+            poemsData.forEach(async poemData => {
+                console.log("Poem:", poemData.poem);
+                console.log("Author:", poemData.author);
+                await displayPoem(poemData);
+            });
+        }
+    } catch (err) {
+        console.log("Error fetching poems: ", err);
+    }
+}
+
+getUserDetails();
+getPoemsAndDisplay();
+
+
+
 getUserDetails();
 
 async function submitPoem() {
